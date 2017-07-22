@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+
+	
+	
+
+	<package name="post" extends="struts-default">
+		
+		<!-- <global-results>
+			<result name="input" type="redirectAction">post_findall</result>
+		</global-results> -->
+		
+		<action name="post_*" class="crm.post.action.postAction" method="{1}">
+			<result name="findall">/pages/post/listPost.jsp</result>
+			<result name="findbyid" >/pages/post/addOrEditPost.jsp</result>
+			<result name="preadd">/pages/post/addOrEditPost.jsp</result>
+			<result name="addpost" type="redirectAction">post_findall</result>
+			<result name="update" type="redirectAction">post_findall</result>
+		</action>
+	</package>
+
+</struts>

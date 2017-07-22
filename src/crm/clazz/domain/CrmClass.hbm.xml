@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-6-7 11:09:42 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="crm" dynamic-insert="false" dynamic-update="false" mutable="true" name="crm.clazz.domain.CrmClass" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="crm_class">
+        <id name="classId" type="string">
+            <column length="50" name="classId"/>
+            <generator class="uuid"/>
+        </id>
+        <many-to-one class="crm.course.domain.CrmCourseType" lazy="false" embed-xml="true" fetch="select" insert="true" name="crmCourseType" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="courseTypeId"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="name"/>
+        </property>
+        <property generated="never" lazy="false" name="beginTime" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="0" name="beginTime"/>
+        </property>
+        <property generated="never" lazy="false" name="endTime" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="0" name="endTime"/>
+        </property>
+        <property generated="never" lazy="false" name="status" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="status"/>
+        </property>
+        <property generated="never" lazy="false" name="totalCount" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="totalCount"/>
+        </property>
+        <property generated="never" lazy="false" name="upgradeCount" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="upgradeCount"/>
+        </property>
+        <property generated="never" lazy="false" name="changeCount" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="changeCount"/>
+        </property>
+        <property generated="never" lazy="false" name="runoffCount" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="runoffCount"/>
+        </property>
+        <property generated="never" lazy="false" name="remark" optimistic-lock="true" type="string" unique="false">
+            <column length="500" name="remark"/>
+        </property>
+        <property generated="never" lazy="false" name="uploadTime" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="0" name="uploadTime"/>
+        </property>
+        <property generated="never" lazy="false" name="uploadPath" optimistic-lock="true" type="string" unique="false">
+            <column length="200" name="uploadPath"/>
+        </property>
+        <property generated="never" lazy="false" name="uploadFilename" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="uploadFilename"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated 2017-6-7 11:09:42 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-lazy="true" package="crm.stud.domain">
+	<class name="CrmStudent" table="crm_student">
+		<id name="stuId" type="string">
+			<generator class="uuid"></generator>
+		</id>
+		
+		<property name="stuName" lazy="false">
+			<column name="stuName"/>
+		</property>
+		
+		<property name="gender" lazy="false">
+			<column name="gender"/>
+		</property>
+		
+		<property name="idCard" lazy="false">
+			<column name="idCard"/>
+		</property>
+		
+		<property name="idCardAddr" lazy="false">
+			<column name="idCardAddr"/>
+		</property>
+		
+		<property name="qq" lazy="false">
+			<column name="qq"/>
+		</property>
+		
+		<property name="email" lazy="false">
+			<column name="email"/>
+		</property>
+		
+		<property name="phoneNum" lazy="false">
+			<column name="phoneNum"/>
+		</property>
+		
+		<property name="totalpay" lazy="false">
+			<column name="totalpay"/>
+		</property>
+		
+		<property name="payd" lazy="false">
+			<column name="payd"/>
+		</property>
+		
+		<property name="school" lazy="false">
+			<column name="school"/>
+		</property>
+		
+		<property name="degere" lazy="false">
+			<column name="degere"/>
+		</property>
+		
+		<property name="major" lazy="false">
+			<column name="major"/>
+		</property>
+		
+		<property name="bjAddr" lazy="false">
+			<column name="bjAddr"/>
+		</property>
+		
+		<property name="homeNum" lazy="false">
+			<column name="homeNum"/>
+		</property>
+		
+		<property name="emergNum" lazy="false">
+			<column name="emergNum"/>
+		</property>
+		
+		<property name="remark" lazy="false">
+			<column name="remark"/>
+		</property>
+		
+		<property name="status" lazy="false">
+			<column name="status"/>
+		</property>
+		
+		<many-to-one name="crmClass" class="crm.clazz.domain.CrmClass" lazy="false" insert="true" fetch="select">
+			<column name="classId"></column>
+		</many-to-one>
+		
+	</class>
+</hibernate-mapping>

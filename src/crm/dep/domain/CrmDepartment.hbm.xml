@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-6-7 11:09:42 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="crm" dynamic-insert="false" dynamic-update="false" mutable="true" name="crm.dep.domain.CrmDepartment" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="crm_department">
+        <id name="depId" type="string">
+            <column name="depId"/>
+            <generator class="uuid"/>
+        </id>
+        <property generated="never" lazy="false" name="depName" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="depName"/>
+        </property>
+        <set table="crm_post"  name="crmPosts" fetch="select" inverse="true" lazy="false" >
+            <key on-delete="noaction">
+                <column name="depId"/>
+            </key>
+            <one-to-many class="crm.post.domain.CrmPost" />
+        </set>
+    </class>
+</hibernate-mapping>

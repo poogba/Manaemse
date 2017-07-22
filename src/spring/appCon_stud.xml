@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        ">
+	
+	<bean id="daoStu" class="crm.stud.dao.impl.DaoImpl" >
+		<property name="sessionFactory"  ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="serviceStu" class="crm.stud.service.impl.ServiceImpl" >
+		<property name="daoStu" ref="daoStu"></property>
+		<property name="serviceClz" ref="serviceClz"></property>
+		<property name="serviceCrs" ref="serviceCrs"></property>
+	</bean>
+	
+</beans>

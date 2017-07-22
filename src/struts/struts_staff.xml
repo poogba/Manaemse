@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	
+
+	<package name="staff" extends="struts-default">
+	
+		<!-- <global-results>
+			<result name="input" type="redirectAction" >dep_findall</result>
+		</global-results> -->
+	
+	
+		<action name="staff_*" class="crm.staff.action.staffAction" method="{1}">
+			<result name="findall">/pages/staff/listStaff.jsp</result>
+			<result name="predit">/pages/staff/editStaff.jsp</result>
+			<result name="update" type="redirectAction">staff_findall</result>
+			<result name="preaddstaff" >/pages/staff/addStaff.jsp</result>
+			<result name="addstaff" type="redirectAction">staff_findall</result>
+			<result name="search" >/pages/staff/listStaff.jsp</result>
+			<result name="input" type="redirectAction">staff_findall</result>
+		</action>
+	</package>
+
+</struts>

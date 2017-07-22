@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	
+	<package name="clazz" extends="struts-default">
+		<action name="clazz_*" class="crm.clazz.action.clazzAction" method="{1}">
+			<result name="findall" >/pages/classesm/listClass.jsp</result>
+			<result name="preadd">/pages/classesm/addOrEditClass.jsp</result>
+			<result name="add" type="redirectAction">clazz_findall</result>
+			<result name="predit">/pages/classesm/addOrEditClass.jsp</result>
+			<result name="update" type="redirectAction">clazz_findall</result>
+			<result name="preupload">/pages/classesm/uploadClass.jsp</result>
+			<result name="upload" type="redirectAction">clazz_findall</result>
+			<result name="download" type="stream">
+				<param name="inputName">inputStream</param>
+				<!-- <param name="contentDisposition">attachment;filename="${fileName}"</param>   -->
+				<param name="contentType">application/octet-stream</param>
+				<param name="contentDisposition">attachment;filename=${@java.net.URLEncoder@encode(fileName,"utf-8")}</param>
+			</result>
+		</action>
+	</package>
+
+</struts>
